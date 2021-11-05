@@ -1,17 +1,19 @@
 const mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel applications. By default, we are compiling the CSS
- | file for the application as well as bundling up all the JS files.
- |
- */
+// Get the APP_URL from .env and remove protocol
+let url = process.env.APP_URL.replace(/(^\w+:|^)\/\//, '');
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+if (mix.inProduction()) {
+   mix.version();
+}else{
+    mix.options({
+        hmrOptions: {
+            host: url,
+            port: 8080 // Can't use 443 here because address already in use
+        }
+    });
+}
+
+mix.js('resources/assets/js/app.js', 'public/js')
+// .sass('resources/assets/sass/app.scss', 'public/css')
+.vue();

@@ -1,0 +1,88 @@
+$icons_prefix: 'gm-icons';
+$icons_v2_prefix: 'gm-icons-v2';
+$icons_ext: 'svg';
+$folder_public: 'icons';
+
+$icons: (
+    "bag",
+    "location",
+    "mail",
+    "phone",
+    "user",
+    "country-chile",
+    "lock",
+    "location-pin",
+    "list",
+);
+
+.#{$icons_prefix} {
+    min-width: 25px;
+    margin-top: -21px;
+}
+
+@each $icon in $icons {
+    .#{$icons_prefix}-#{$icon} {
+    }
+
+    .#{$icons_prefix}-#{$icon}:before {
+        content: '';
+        width: 50px;
+        height: 50px;
+        background-image: url('/'+#{$folder_public}+'/'+#{$icon}+'.'+$icons_ext);
+        position: absolute;
+        background-repeat: no-repeat;
+    }
+}
+
+.#{$icons_v2_prefix} {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    text-indent: -9999px;
+
+    width: 25px;
+    min-width: 25px;
+    
+    height: 25px;
+    min-height: 25px;
+
+    pointer-events: none;
+}
+
+@each $icon in $icons {
+    .#{$icons_v2_prefix}-#{$icon} {
+        background-image: url('/'+#{$folder_public}+'/'+#{$icon}+'.'+$icons_ext);
+
+        background-size: 25px 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+@for $size from 1 through 512 {
+    .#{$icons_v2_prefix}-x#{$size} {
+        background-size: #{$size} + 'px' #{$size} + 'px' !important;
+
+        width: #{$size} + 'px';
+        min-width: #{$size} + 'px';
+        height: #{$size} + 'px';
+        min-height: #{$size} + 'px';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

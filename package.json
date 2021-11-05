@@ -7,12 +7,36 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "postinstall": "npm run prod",
+        "heroku-postbuild": "npm run prod"
     },
     "devDependencies": {
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "@vue/compiler-sfc": "^3.1.2",
+        "cross-env": "^5.1",
+        "jquery": "^3.2",
+        "lodash": "^4.17.4",
+        "popper.js": "^1.12",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.39.0",
+        "sass-loader": "^12.1.0",
+        "vue": "^3.1.2",
+        "vue-loader": "^16.2.0",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "@googlemaps/js-api-loader": "^1.12.7",
+        "@popperjs/core": "^2.10.1",
+        "axios": "^0.21.4",
+        "bootstrap": "^5.1.1",
+        "laravel-mix": "^6.0.29",
+        "sweetalert2": "^11.1.7",
+        "vee-validate": "^4.4.10",
+        "vue-multiselect": "^3.0.0-alpha.2",
+        "vue3-recaptcha-v2": "^1.0.0",
+        "vuex": "^4.0.2",
+        "yup": "^0.32.9",
+        "yup-phone": "^1.2.19"
     }
 }
