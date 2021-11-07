@@ -45,6 +45,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "post-install-cmd": [
+            "@php -r \"putenv(\"MIX_TEST_1=\"${MIX_APP_URL}\"\");\""
         ]
     },
     "extra": {

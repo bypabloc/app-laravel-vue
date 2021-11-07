@@ -8,8 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "postinstall": "npm run prod",
-        "heroku": "MIX_TEST_1=${APP_URL}"
+        "postinstall": "npm run prod"
     },
     "devDependencies": {
         "@vue/compiler-sfc": "^3.1.2",
