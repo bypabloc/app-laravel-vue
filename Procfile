@@ -1,2 +1,3 @@
-web: vendor/bin/heroku-php-apache2 public/ npm run heroku
+web: vendor/bin/heroku-php-apache2 public/
 worker: php artisan queue:work redis --queue=high,default --sleep=3 --tries=3 --daemon
+purge: npm run heroku
