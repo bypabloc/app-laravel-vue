@@ -8,6 +8,8 @@
     <button @click='reset'> Reset </button>
     <br/>
     {{ query }}
+    <br/>
+    Prueba de cambio por aca
 </template>
 
 <script>
